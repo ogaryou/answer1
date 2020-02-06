@@ -6,6 +6,18 @@
     text-align: center;
     font-weight: bold;
   }
+  .top{
+    text-align: right;
+    &__btn{
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    :hover{
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
   
 
 }
@@ -27,4 +39,32 @@
     opacity: 0.8;
     cursor: pointer;
   }
+}
+form{
+  display: flex;
+  justify-content: space-between;
+}
+.box1{
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.box2{
+  margin-right: 50px;
+  margin-top: 50px;  
+}
+.form-name1{
+  font-weight: bold;
+  font-size: 30px;
+}
+.form-name2{
+  font-weight: bold;
+  font-size: 30px;
+}
+textarea{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
