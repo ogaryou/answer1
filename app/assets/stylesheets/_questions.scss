@@ -1,0 +1,30 @@
+#create{
+  background-color: black;
+  h1{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+
+}
+.submitn{
+  text-align: center;
+  background: linear-gradient(darkgray, lightgray);
+  height: 40px;
+  &__btn{
+    font-size: 1.4em;
+    font-weight: bold;
+    color: black;
+    border-style: none;
+    box-shadow: 2px 2px 3px 1px #666;
+    border-radius: 5px;
+    margin-top: 2px;
+    width: 100px;
+  }
+  :hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
