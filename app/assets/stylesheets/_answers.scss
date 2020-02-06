@@ -1,0 +1,129 @@
+#home{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  background-color: black;
+  position: fixed;
+}
+
+#study{
+  font-size: 50px;
+  margin: 0 20px 20px 30px;
+  color: #fff;
+}
+.tag{
+  display: flex;
+  width: 600px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  &__list{
+    margin-right: 2px;
+    text-align: center;
+  }
+  a{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0px 15px;
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;  
+    &:hover{
+      background-color:#fff;
+      color: black;
+      border-radius: 8px;
+    }
+  }
+}
+
+.content {
+  background-color:#fff;
+  padding-top: 80px;
+  &__title{
+    padding: 40px 0;
+    h2{
+      font-size: 40px;
+      font-weight: bold;
+      color: black;
+      margin-left: 30px;
+      border-bottom: 1px solid black;
+      margin-bottom: 20px;
+    }
+    p{
+      font-size: 20px;
+      line-height: 1.5;
+      color: rgb(104, 108, 104);
+    }
+
+
+    
+    #word{
+      // text-align: center;
+      // background-color: rgb(255, 255, 255);
+      // border-width: 16px;
+      // border-style: solid;
+      // border-color: rgb(247, 247, 247);
+      // border-image: initial;
+      // border-radius: 8px;
+      // margin-bottom: 150px;
+      margin-left: 30px;
+      margin-bottom: 100px;
+    }
+    #title1{
+      border-left: 10px solid black;
+    }
+    #title2{
+      text-align: right;
+      margin-right: 30px;
+      border-right: 10px solid black;
+    }
+    #title3{
+      border-left: 10px solid black;
+    }
+    #word2 {
+      margin-left: 30px;
+      margin-bottom: 100px;
+    }
+
+    #word3{
+      float: right;
+      margin-right: 30px;
+
+    }
+    #word4{
+      float: right;
+      clear:  both; 
+      margin-right: 30px;
+    }
+    #word5{
+      clear:  both; 
+      float: right;
+      margin-right: 209px;
+    }
+    
+  }
+  &__image{
+    clear: both;
+    margin-bottom: 70px;
+  }
+}
+footer{
+  background-color: black;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+    ul{
+      margin-bottom: 20px;
+      li{
+        text-align: center;
+        display: inline;
+        a{
+          color: #fff;
+          font-size: 14px;
+          font-weight: bold;
+          text-decoration: none;
+          margin-right: 15px;
+        }
+      }
+     
+    }
+}
