@@ -6,4 +6,7 @@ class QuestionsController < ApplicationController
     @question = Question.new
     @response = Response.new
   end  
+
+  def create
+  end  
 end  
