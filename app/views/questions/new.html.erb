@@ -10,20 +10,25 @@
       <%= f.submit '作成', class: "submitn__btn"%>
           <%# <button type="submit" class="submitn__btn">作成</button> %>
     </div>
-  <div class="form">
-      <div class="box1">
-        <span class="form-name1">問題</span>
-        <div class="form-question">
-          <%= f.text_area :body, class: 'form__control',placeholder: "問題文", size: "40x20" %>
-        </div>
-      </div>  
-      <div class="box2">
-        <span class="form-name2">解答</span>
+    <div class="form">
+        <div class="box1">
+          <span class="form-name1">問題</span>
+          <div class="form-question">
+            <%= f.text_area :body, class: 'form__control',placeholder: "問題文", size: "40x20" %>
+          </div>
+        </div> 
+    </div> 
+  <% end %>   
+  <%= fields_for :response,(@response) do |response| %> 
+    <div class="form">
+        <div class="box2">
+          <span class="form-name2">解答</span>
 
-        <div class="form-answer">
-          <%= f.text_area :body, class: 'form__aon',placeholder: "解答文", size: "40x20"%>
-        </div>  
+          <div class="form-answer">
+            <%= response.text_area :body, class: 'form__aon',placeholder: "解答文", size: "40x20"%>
+          </div>  
+        </div>
       </div>
-    </div>
+    </div>  
   <% end %>
 </div>

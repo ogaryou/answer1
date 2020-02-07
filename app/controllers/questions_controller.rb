@@ -4,5 +4,6 @@ class QuestionsController < ApplicationController
   end  
   def new
     @question = Question.new
+    @response = Response.new
   end  
 end  
