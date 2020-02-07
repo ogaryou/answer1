@@ -5,7 +5,7 @@
       <a href="/" class="top__btn">トップページに戻る</a>
     </div>
   </header>
-  <%= form_with model: @questions do |f| %>
+  <%= form_with model: @question,:url => {:question => :new} do |f| %>
     <div class="submitn">
       <%= f.submit '作成', class: "submitn__btn"%>
           <%# <button type="submit" class="submitn__btn">作成</button> %>
