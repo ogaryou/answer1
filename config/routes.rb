@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'answers#index'
   get 'questions/new', to: 'questions#new'
   get 'questions/index', to: 'questions#index'
+  get 'responses/new', to: 'responses#new'
 end
