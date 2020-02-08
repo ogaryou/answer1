@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
   end  
 
   def create
+    binding.pry
   end  
 
   private
@@ -18,4 +19,5 @@ class QuestionsController < ApplicationController
   def response_params
     params.require(:response).permit(:body)
   end  
-end  
+
+end
