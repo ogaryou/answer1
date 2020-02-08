@@ -9,4 +9,13 @@ class QuestionsController < ApplicationController
 
   def create
   end  
+
+  private
+  def question_params
+    params.require(:question).permit(:body)
+  end  
+
+  def response_params
+    params.require(:response).permit(:body)
+  end  
 end  
