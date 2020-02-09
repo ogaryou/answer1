@@ -12,5 +12,4 @@
 class Question < ApplicationRecord
   has_many :question_response_relations
   has_many :response, through: :question_response_relations
-
 end
