@@ -10,10 +10,8 @@ class QuestionsController < ApplicationController
   end  
 
   def create
-    @question = Question.new(question_params)
-    @question.save
-    @response = Response.new(response_params)
-    @response.save
+    Question.create(question_params)
+    Response.create(response_params)
   end  
 
   private
