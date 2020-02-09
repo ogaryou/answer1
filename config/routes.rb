@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'questions/index', to: 'questions#index'
   get 'responses/new', to: 'responses#new'
   post '/questions/new', to: 'questions#create'
+  post 'questions/new', to: 'responses#create'
 end
