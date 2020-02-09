@@ -1,17 +1,16 @@
 # == Schema Information
 #
-# Table name: questions
+# Table name: responses
 #
 #  id         :bigint           not null, primary key
 #  body       :text(65535)      not null
-#  title      :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class QuestionTest < ActiveSupport::TestCase
+class ResponseTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
