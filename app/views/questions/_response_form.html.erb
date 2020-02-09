@@ -1,0 +1,11 @@
+<%= form_with model: @response,:url => {:question => :new} do |f|%>
+  <div class="form">
+    <div class="box2">
+      <span class="form-name2">解答</span>
+
+      <div class="form-answer">
+        <%= f.text_area :body, class: 'form-aon',placeholder: "解答文", size: "50x20"%>
+      </div>  
+    </div>  
+  </div>
+<% end %>  
