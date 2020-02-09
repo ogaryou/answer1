@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   def create
     Question.create(question_params)
     Response.create(response_params)
+    binding.pry
   end  
 
   private

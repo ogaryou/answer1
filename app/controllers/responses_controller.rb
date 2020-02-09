@@ -1,3 +1,4 @@
+
 class ResponsesController < ApplicationController
   def new
     
