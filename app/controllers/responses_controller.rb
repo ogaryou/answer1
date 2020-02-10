@@ -8,7 +8,8 @@ class ResponsesController < ApplicationController
 
 
   end
-  
+  def destroy
+  end  
 
 
   
