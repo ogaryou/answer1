@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_02_09_103211) do
 
   create_table "qas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "body", null: false
+    t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_02_09_103211) do
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.text "body", null: false
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

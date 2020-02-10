@@ -1,11 +1,4 @@
-<div class="main-contents">
-  <header id="create">
-    <h1>問題作成</h1>
-    <div class="top">
-      <a href="/" class="top__btn">トップページに戻る</a>
-    </div>
-  </header>
-  <%= form_with model: @question,:url => {:questions => :new} do |f| %>
+  <%= form_with model: @qa,:url => {:qas => :new} do |f| %>
     <div class="submitn">
       <%= f.submit '作成', class: "submitn__btn"%>
           <%# <button type="submit" class="submitn__btn">作成</button> %>
@@ -17,7 +10,12 @@
           <%= f.text_area :body, class: 'form__control',placeholder: "問題文", size: "40x20" %>
         </div>
       </div> 
-  </div> 
-    <%= render partial: 'response_form', locals:{ response: @response} %>
+      <div class="box2">
+        <span class="form-name2">解答</span>
+
+        <div class="form-answer">
+          <%= f.text_area :content, class: 'form__aon',placeholder: "解答文", size: "40x20"%>
+        </div>  
+      </div>
+  </div>  
   <% end %>  
-</div>

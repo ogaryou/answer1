@@ -9,6 +9,5 @@
 #
 
 class Response < ApplicationRecord
-  has_many :question_response_relations
-  has_many :question, through: :question_response_relations
+belongs_to :qa, optional: true
 end
