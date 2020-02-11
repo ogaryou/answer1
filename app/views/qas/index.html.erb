@@ -1,7 +1,14 @@
 <div class="main">
-  <h1 class="main_name"> 問題一覧　<h1>
+  <h1 class="main__name"> 問題一覧　<h1>
   <div class="main__link">
-    <div class="main__link__tag"><a href="/qas/new" class="main__link__tag__name">新規作成</a></div>
+    <div class="main__link__tag">
+      <ul>
+        <li>
+          <a href="/qas/new" class="main__link__tag__name">新規作成</a>
+          <a href="/" class="main__link__tag__name">ホーム画面</a>
+        <li>
+      </ul>
+    </div>
   </div>
   <table class="main__table">
     <thead class="main__table__thead">
@@ -9,16 +16,20 @@
         <th>問題番号</th>
         <th>問題</th>
         <th>解答</th>
+        <th>作成日時</th>
+        <th>更新日時</th>
         <th>削除</th>
       </tr>
     </thead>
     <tbody>
       <% @qa.each do |qa|%>
         <tr>
-          <th><%= qa.id %></th>
-          <th><%= qa.body %></th>
-          <th><%= qa.content %></th>
-          <th><%= link_to '削除',qas_destroy_path(qa.id),  method: :delete %></th>
+          <td><%= qa.id %></td>
+          <td><%= qa.body %></td>
+          <td><%= qa.content %></td>
+          <td><%= qa.created_at.to_s(:datetime_jp) %></td>
+          <td><%= qa.updated_at.to_s(:datetime_jp) %></td>
+          <td><%= link_to '削除',qas_destroy_path(qa.id),  method: :delete %></td>
         </tr> 
       <% end %>
     </tbody> 
