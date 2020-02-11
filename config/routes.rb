@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'qas/index', to: 'qas#index'
   resources :qas
   delete 'qas/destroy', to: 'qas#destroy'
+  post '/qas/new',to: 'qas#create'
 end
