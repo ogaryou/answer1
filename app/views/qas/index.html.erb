@@ -27,8 +27,8 @@
           <td><%= qa.id %></td>
           <td><%= qa.body %></td>
           <td><%= qa.content %></td>
-          <td><%= qa.created_at %></td>
-          <td><%= qa.updated_at %></td>
+          <td><%= qa.created_at.to_s(:datetime_jp) %></td>
+          <td><%= qa.updated_at.to_s(:datetime_jp) %></td>
           <td><%= link_to '削除',qas_destroy_path(qa.id),  method: :delete %></td>
         </tr> 
       <% end %>
