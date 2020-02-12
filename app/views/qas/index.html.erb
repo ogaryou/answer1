@@ -1,5 +1,5 @@
 <div class="main">
-  <h1 class="main__name"> 問題一覧　<h1>
+  <h1 class="main__name">  復  習　</h1>
   <div class="main__link">
     <div class="main__link__tag">
       <ul>
@@ -10,28 +10,17 @@
       </ul>
     </div>
   </div>
-  <table class="main__table">
-    <thead class="main__table__thead">
-      <tr>
-        <th>問題番号</th>
-        <th>問題</th>
-        <th>解答</th>
-        <th>作成日時</th>
-        <th>更新日時</th>
-        <th>削除</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @qa.each do |qa|%>
-        <tr>
-          <td><%= qa.id %></td>
-          <td><%= qa.body %></td>
-          <td><%= qa.content %></td>
-          <td><%= qa.created_at.to_s(:datetime_jp) %></td>
-          <td><%= qa.updated_at.to_s(:datetime_jp) %></td>
-          <td><%= link_to '削除',qas_destroy_path(qa.id),  method: :delete %></td>
-        </tr> 
-      <% end %>
-    </tbody> 
-  </table>
+  <div class="main__head">
+    <div class="main__head__question">
+      問題
+    </div>
+    <div class="main__head__questions">
+      <p>1+1=?</p>
+    </div>
+  </div>
+  <div class="main__bootom">
+    <div class="main__bootom__botun">
+      <div id="main__bootom__botun__click"><p id="text">答えを見る</p></div>
+    </div>
+  </div>
 </div>
