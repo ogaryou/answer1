@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :qas
   delete 'qas/destroy', to: 'qas#destroy'
   post '/qas/new',to: 'qas#create'
+  
 end
