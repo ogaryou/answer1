@@ -1,7 +1,7 @@
 class QasController < ApplicationController
 
   def index
-    @qa = Qa.all
+    @qa = Qa.order("RAND()").limit(1)
   end  
   def new
     @qa = Qa.new
@@ -9,6 +9,7 @@ class QasController < ApplicationController
 
   def create
     Qa.create(qa_params)
+    redirect_to new_qa_path
   end  
 
   def show

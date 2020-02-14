@@ -15,7 +15,9 @@
       問題
     </div>
     <div class="main__head__questions">
-      <p>1+1=?</p>
+      <% @qa.each do |f|%>
+        <p><%= f.body %></p>
+      <% end %>
     </div>
   </div>
   <div class="main__bootom">
