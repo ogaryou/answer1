@@ -22,7 +22,10 @@
   </div>
   <div class="main__bootom">
     <div class="main__bootom__botun">
-      <div id="main__bootom__botun__click"><p id="text">答えを見る</p></div>
+      <div id="main__bootom__botun__click">
+        <%= form_with model: @qa,:url => {:qas => :new},id: "new_qa" do |f| %>
+          <%= f.submit "答えを見る",  class:"main__bootom__botun__click__function"%>
+        <% end %>
     </div>
   </div>
 </div>
