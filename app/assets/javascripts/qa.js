@@ -18,11 +18,15 @@ $(function(){
   $('.main__bootom__botun__click__function').on('click', function(){
     console.log('今晩わ');
     document.getElementById("question1").textContent= "解答";
+
+    $('#main__bootom__botun__click2').slideToggle();　
+    // $('#question1').toggle();
     const p1 = document.getElementById("answer1");
 
     if(p1.style.display=="block"){
         // noneで非表示
         p1.style.display ="none";
+
     }else{
         // blockで表示
         p1.style.display ="block";

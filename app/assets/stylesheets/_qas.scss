@@ -26,8 +26,9 @@
       color: #fff;
       font-size: 46px;
       font-weight: bold;
-      
+
     }
+
     &__questions{
       border: solid 1px lightgray;
       height: 290px;
@@ -59,7 +60,9 @@
         text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
       }
       }
-
+      #main__bootom__botun__click2{
+        display: none;
+      }
     }
   }
 
