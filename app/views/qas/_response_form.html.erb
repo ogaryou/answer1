@@ -1,4 +1,4 @@
-  <%= form_with model: @qa,:url => {:qas => :new} do |f| %>
+  <%= form_with model: @qa,:url => {:qas => :new},id: "new_qa" do |f| %>
     <div class="submitn">
       <%= f.submit '作成', class: "submitn__btn"%>
           <%# <button type="submit" class="submitn__btn">作成</button> %>
