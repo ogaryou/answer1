@@ -20,6 +20,7 @@ $(function(){
     document.getElementById("question1").textContent= "解答";
 
     $('#main__bootom__botun__click2').slideToggle();　
+    $('#questions2').toggle();
     // $('#question1').toggle();
     const p1 = document.getElementById("answer1");
 
