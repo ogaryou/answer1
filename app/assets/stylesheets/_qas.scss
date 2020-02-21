@@ -35,6 +35,9 @@
       p{
         padding-top: 100px;
       }
+      #answer1{
+        display: none;
+      }
     }
   }
   &__bootom{
@@ -56,6 +59,7 @@
         text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
       }
       }
+
     }
   }
 
