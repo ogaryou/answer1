@@ -9,7 +9,7 @@ class QasController < ApplicationController
 
   def create
     Qa.create(qa_params)
-    redirect_to new_qa_path
+    redirect_to qas_path
   end  
 
   def show

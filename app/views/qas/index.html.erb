@@ -26,6 +26,7 @@
       <div id="main__bootom__botun__click">
         <%= form_with model: @qa,:url => {:qas => :index} do |f| %>
           <%= f.submit "解答を表示する",  class:"main__bootom__botun__click__function",id: "new_qa"%>
+          <%= f.submit "次の問題へ", class:"main__bootom__botun__click__function__next",id: "next_qa"%>
         <% end %>
     </div>
       <div id="main__bootom__botun__click2">
