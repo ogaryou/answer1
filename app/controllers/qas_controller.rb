@@ -11,6 +11,9 @@ class QasController < ApplicationController
     Qa.create(qa_params)
     redirect_to qas_path
   end  
+  def question
+
+  end  
 
   def show
   end  
@@ -22,6 +25,8 @@ class QasController < ApplicationController
 
   private
   def qa_params
-    params.require(:qa).permit(:body, :content, :id)
+    params.require(:qa).permit(:body, :content, :id, :name, :checkbox,ingredients:[])
   end  
+
+
 end
