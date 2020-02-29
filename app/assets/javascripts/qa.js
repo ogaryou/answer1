@@ -15,7 +15,7 @@
 
 
 $(function(){
-  $('.main__head__questions').html(gon.sample[gon.count].body);
+  $('.main__head__questions__answer').html(gon.sample[gon.count].body);
   $('.main__bootom__botun__click__function').on('click', function(){
 
     gon.count += 0;
@@ -23,7 +23,7 @@ $(function(){
 
     $('.main__head__question').html('解答' + num + '/' + gon.sample.length);
 
-    $('.main__head__questions').html(gon.sample[gon.count].content);
+    $('.main__head__questions__answer').html(gon.sample[gon.count].content);
     if (num === gon.sample.length) {
       $('.main__bootom__botun__click__function__next').hide();
       $('.main__bootom__botun__click__function').hide();
@@ -47,7 +47,7 @@ $(function(){
     });
 
     $('.main__head__question').html('問題' + num + '/' + gon.sample.length);
-    $('.main__head__questions').html(gon.sample[gon.count].body);
+    $('.main__head__questions__answer').html(gon.sample[gon.count].body);
 
   })
 })
