@@ -28,7 +28,12 @@ class QasController < ApplicationController
   end  
 
   def create
-    Qa.create(qa_params)
+    qa = Qa.new(qa_params)
+    if qa.save
+      redirect_to controller: 'qas', action: 'new'
+    else
+      render 'new'  
+    end  
 
   end  
   def question
