@@ -29,8 +29,7 @@ class QasController < ApplicationController
 
   def create
     Qa.create(qa_params)
-    flash[:notice] = "問題を作成しました"
-    redirect_to new_qa_path
+
   end  
   def question
 

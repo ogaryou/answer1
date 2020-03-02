@@ -1,3 +1,5 @@
+  
+  <%= javascript_include_tag "new.js" %>
   <%= form_with model: @qa,:url => {:qas => :new},id: "new_qa" do |f| %>
     <div class="submitn">
       <%= f.submit '作成', class: "submitn__btn"%>
@@ -18,8 +20,4 @@
         </div>  
       </div>
   </div> 
-
-  <% if flash[:notice] %>
-    <div class="alert"><%= flash[:notice] %>
-  <% end %> 
   <% end %>  
