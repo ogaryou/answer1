@@ -1,5 +1,4 @@
   
-  <%= javascript_include_tag "new.js" %>
   <%= form_with model: @qa,:url => {:qas => :new},id: "new_qa", local: true do |f| %>
     <div class="submitn">
       <%= f.submit '作成', class: "submitn__btn"%>
