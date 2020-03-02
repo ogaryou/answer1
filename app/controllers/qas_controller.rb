@@ -28,11 +28,11 @@ class QasController < ApplicationController
   end  
 
   def create
-    qa = Qa.new(qa_params)
-    if qa.save
-      redirect_to controller: 'qas', action: 'new'
+    @qa = Qa.new(qa_params)
+    if @qa.save
+      redirect_to action: :index
     else
-      render 'new'  
+      render "new"
     end  
 
   end  
@@ -44,8 +44,7 @@ class QasController < ApplicationController
   end  
 
   def destroy
-    qa = Qa.find(params[:id])
-    qa.delete
+
   end  
 
   def update
