@@ -1,5 +1,5 @@
 #home{
-  height: 80px;
+  max-height: 100px;
   width: 100%;
   display: flex;
   background-color: black;
@@ -36,7 +36,6 @@
 }
 
 .content {
-  background-color:#fff;
   padding-top: 80px;
   &__title{
     padding: 40px 0;

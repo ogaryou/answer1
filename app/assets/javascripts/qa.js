@@ -15,22 +15,41 @@
 
 
 $(function(){
+  $('.main__head__questions__answer').html(gon.sample[gon.count].body);
   $('.main__bootom__botun__click__function').on('click', function(){
-    console.log('今晩わ');
-    document.getElementById("question1").textContent= "解答";
 
-    $('#main__bootom__botun__click2').slideToggle();　
-    $('#questions2').toggle();
-    // $('#question1').toggle();
-    const p1 = document.getElementById("answer1");
+    gon.count += 0;
+    var num = gon.count + 1;
 
-    if(p1.style.display=="block"){
-        // noneで非表示
-        p1.style.display ="none";
+    $('.main__head__question').html('解答' + num + '/' + gon.sample.length);
 
-    }else{
-        // blockで表示
-        p1.style.display ="block";
-    }
+    $('.main__head__questions__answer').html(gon.sample[gon.count].content);
+    if (num === gon.sample.length) {
+      $('.main__bootom__botun__click__function__next').hide();
+      $('.main__bootom__botun__click__function').hide();
+      $('.main__head__question').html('お疲れ様でした');
+    };
+  })
+  $('.main__bootom__botun__click__function__next').on('click', function(){
+    console.log('嫌だ');
+    // document.getElementById("question1").textContent= "問題";
+    gon.count += 1;
+    var num = gon.count + 1;
+    $.ajax({
+      url: '/qas/index',
+      type: 'GET',
+      dataType: 'html',
+      async: true,
+      data: {
+        count: gon.count,
+        sample: gon.sample,
+      },
+    });
+
+    $('.main__head__question').html('問題' + num + '/' + gon.sample.length);
+    $('.main__head__questions__answer').html(gon.sample[gon.count].body);
+
   })
 })
+
+

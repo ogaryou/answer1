@@ -1,40 +1,40 @@
-<div class="main">
-  <h1 class="main__name">  復  習　</h1>
-  <div class="main__link">
-    <div class="main__link__tag">
-      <ul>
-        <li>
-          <a href="/qas/new" class="main__link__tag__name">新規作成</a>
-          <a href="/" class="main__link__tag__name">ホーム画面</a>
-        <li>
-      </ul>
+<%= javascript_include_tag "qa.js" %>
+  <div class="main">
+    <div class="main__name">  復  習　</div>
+    <div class="main__link">
+      <div class="main__link__tag">
+        <ul>
+          <li>
+            <a href="/qas/new" class="main__link__tag__name">新規作成</a>
+            <a href="/" class="main__link__tag__name">ホーム画面</a>
+          <li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="main__head">
-    <div class="main__head__question" >
-      <div id="question1"> 問題</div>
+    <div class="main__head">
+      <div class="main__head__question" >
+        <div id="question1">問題</div>
+      </div>
+      <div class="main__head__questions">
+        <div class="main__head__questions__answer"></div>
+      
     </div>
-    <div class="main__head__questions">
-      <% @qa.each do |f|%>
-        <p id="questions2"><%= f.body %></p>
-        <p id="answer1"><%= f.content%></p>
-        <% end %>
-    
-  </div>
-  <div class="main__bootom">
-    <div class="main__bootom__botun">
-      <div id="main__bootom__botun__click">
-        <%= form_with model: @qa,:url => {:qas => :index} do |f| %>
-          <%= f.submit "解答を表示する",  class:"main__bootom__botun__click__function",id: "new_qa"%>
-        <% end %>
-    </div>
-      <div id="main__bootom__botun__click2">
-          <% %w(完璧 できた 普通 よくわからなかった 全くわからなかった ).each.with_index do |ingredient,i| %>
-          <label>
-            <%= check_box_tag 'question[ingredients][]', ingredient,false,id:"question_ingredients_#{i}"%>
-            <%= ingredient %>
-          </label>
+    <div class="main__bootom">
+      <div class="main__bootom__botun">
+        <div id="main__bootom__botun__click">
+          <%= form_with model: @qa,:url => {:qas => :index} do |f| %>
+            <%= f.submit "解答を表示する",  class:"main__bootom__botun__click__function",id: "new_qa"%>
+            <%= f.submit "次の問題へ", class:"main__bootom__botun__click__function__next",id: "next_qa"%>
           <% end %>
+      </div>
+        <div id="main__bootom__botun__click2">
+            <% %w(完璧 できた 普通 よくわからなかった 全くわからなかった ).each.with_index do |ingredient,i| %>
+            <label>
+              <%= check_box_tag 'qas[ingredients][]', ingredient,false,id:"qas_ingredients_#{i}"%>
+              <%= ingredient %>
+            </label>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>

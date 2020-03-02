@@ -1,7 +1,27 @@
 class QasController < ApplicationController
 
   def index
-    @qa = Qa.order("RAND()").limit(1)
+    gon.qas = Qa.all
+    if params[:count] == nil
+      qas = Qa.all
+      @sample = qas.sample(50) 
+      @count = 0
+
+      gon.sample = @sample
+      gon.count = @count
+    else  
+      sample = params[:sample]
+      count = params[:count]
+      qas = Qa.all
+      sample_array = []
+      sample.each {|key, value|
+        sample_id = value[:id]
+        sample_array << qas.find(sample_id)
+      }
+      @sample = sample_array
+      @count = count.to_i
+    end 
+
   end  
   def new
     @qa = Qa.new
@@ -9,7 +29,10 @@ class QasController < ApplicationController
 
   def create
     Qa.create(qa_params)
-    redirect_to new_qa_path
+    redirect_to qas_path
+  end  
+  def question
+
   end  
 
   def show
@@ -20,8 +43,14 @@ class QasController < ApplicationController
     qa.delete
   end  
 
+  def update
+
+  end  
+
   private
   def qa_params
-    params.require(:qa).permit(:body, :content, :id)
+    params.require(:qa).permit(:body, :content, :id, :name, :checkbox,ingredients:[])
   end  
+
+
 end
