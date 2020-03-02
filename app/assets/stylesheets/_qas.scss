@@ -1,6 +1,6 @@
 
 .main{
-  height: 100vh;
+  max-height: 100%;
   max-width: 100%;
   background-color: whitesmoke;
   line-height: 100px;
@@ -40,14 +40,14 @@
 
     &__questions{
       border: solid 1px lightgray;
-      
+      height: calc(100% - 300px);
       
       border-top: none;
       background-color: #fff;
       &__answer{
         font-weight: bold;
         font-size: 20px;
-        padding-top: 80px;
+        padding-top: 30px;
       }
     }
   }
