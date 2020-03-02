@@ -38,7 +38,7 @@ $(function(){
     $.ajax({
       url: '/qas/index',
       type: 'GET',
-      dataType: 'HTML',
+      dataType: 'html',
       async: true,
       data: {
         count: gon.count,
