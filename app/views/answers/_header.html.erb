@@ -2,10 +2,13 @@
   <h1 id="study">Study App</h1>
     <nav>
       <ul class="tag">
-        <li class="tag__list"><a href="/qas/new">作成</a></li>
-        <li class="tag__list"><a href="/qas/index">作成一覧</a></li>
-        <li class="tag__list"><a href="#">復習</a></li>
-        <li class="tag__list"><a href="#">ログイン</a></li>
+        <li class="tag__list"><%= link_to "作成",new_qa_path %></li>
+        <li class="tag__list"><%= link_to "今日のタスク",qas_index_path%></li>
+        <li class="tag__list"><%= link_to "ログイン", :items%>
+          <ul>
+            <li></li>
+          </ul>
+        <li>  
       </ul>
     </nav>
 </header>

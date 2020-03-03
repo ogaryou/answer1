@@ -2,6 +2,7 @@ class QasController < ApplicationController
 
   def index
     gon.qas = Qa.all
+    
     if params[:count] == nil
       qas = Qa.all
       @sample = qas.sample(50) 
