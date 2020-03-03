@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      qa:
+        body: 問題
+        content: 解答
