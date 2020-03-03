@@ -3,7 +3,7 @@
     <div class="submitn">
       <%= f.submit '作成', class: "submitn__btn"%>
           <%# <button type="submit" class="submitn__btn">作成</button> %>
-    </div>
+    </div> 
     <% if @qa.errors.any? %>
       <div class="alert">
         <ul>
@@ -13,6 +13,9 @@
         </ul>
       </div>
     <% end%>
+    <% if flash[:notice] %>
+      <div class="message"><%= flash[:notice] %></div>
+    <% end %>
     
   <div class="form">
       <div class="box1">

@@ -30,7 +30,8 @@ class QasController < ApplicationController
   def create
     @qa = Qa.new(qa_params)
     if @qa.save
-      redirect_to action: :index
+      flash[:notice] = "作成しました"
+      redirect_to action: :new
     else
       render "new"
     end  
