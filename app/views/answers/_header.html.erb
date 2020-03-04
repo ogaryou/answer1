@@ -1,14 +1,18 @@
-<header id="home">
-  <h1 id="study">Study App</h1>
-    <nav>
-      <ul class="tag">
-        <li class="tag__list"><%= link_to "作成",new_qa_path %></li>
-        <li class="tag__list"><%= link_to "今日のタスク",qas_index_path%></li>
-        <li class="tag__list"><%= link_to "ログイン", :items%>
-          <ul>
-            <li></li>
-          </ul>
-        <li>  
-      </ul>
-    </nav>
+<%= javascript_include_tag "answer.js" %>
+<header class="home">
+  <ul class="dropdwn">
+        <li>Stady App</li>
+        <li><%= link_to "作成",new_qa_path %></li>
+        <li><%= link_to "今日のタスク",qas_index_path%></li>
+        <li>ログイン
+            <ul class="dropdwn__menu">
+              <li><%= fa_icon("twitter" ) %><%=link_to "twitterでログインする","#"%></li>
+              <li><%= fa_icon("google")%><%= link_to "g-mailでログインする","#"%></li>
+            </ul>
+        </li>
+
+    </ul>
 </header>
+
+
+

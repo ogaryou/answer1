@@ -1,39 +1,72 @@
-#home{
-  max-height: 100px;
-  width: 100%;
-  display: flex;
-  background-color: black;
-  position: fixed;
+header{
+	position: relative;
+	max-width: 100%;
+  font-size: 25px;
 }
+.dropdwn{
+  display: flex;
+  &__menu{
+    display: none;
+    position: absolute;
+    padding: 0;
+    background: rgb(75, 100, 209);
+    
+    li{
+      display: flex;
+    }
+    a{
+      padding: 5px 10px;
+      margin: -5px 5px -5px -5px;
+      display: block;
+      color: #fff;
 
-#study{
-  font-size: 50px;
-  margin: 0 20px 20px 30px;
-  color: #fff;
-}
-.tag{
-  display: flex;
-  width: 600px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  &__list{
-    margin-right: 2px;
-    text-align: center;
-  }
-  a{
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0px 15px;
-    text-decoration: none;
-    padding: 10px;
-    color: #fff;  
-    &:hover{
-      background-color:#fff;
-      color: black;
-      border-radius: 8px;
+    }
+    .fa-twitter{
+      margin: 5px;
+    }
+    .fa-google{
+      margin: 5px;
     }
   }
+  li{
+    width:100%;
+    margin: 1px;
+    background: #7ba5ff;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
 }
+ul{
+  text-align: center;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  color: #fff;
+}
+
+li{
+  max-width:100%;
+
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .content {
   padding-top: 80px;
