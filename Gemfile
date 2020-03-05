@@ -69,5 +69,6 @@ gem 'gon'
 gem 'rails-i18n'
 gem 'font-awesome-rails'
 gem 'devise'
-
+gem 'omniauth'
+gem 'omniauth-twitter'
 
