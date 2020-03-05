@@ -5,35 +5,55 @@ header{
 }
 .dropdwn{
   display: flex;
+  background-color: black;
+  border: 2px solid #2e2e2e;
   &__menu{
     display: none;
     position: absolute;
     padding: 0;
-    background: rgb(75, 100, 209);
-    
-    li{
+    background:#202020;
+    font-size: 20px;
+    width: calc(100%/4);
+    &__1{
       display: flex;
-    }
-    a{
-      padding: 5px 10px;
-      margin: -5px 5px -5px -5px;
-      display: block;
-      color: #fff;
+      border-bottom: 2px solid #2e2e2e;
 
     }
+    :hover{
+      background-color: lightgray;
+      color: #222;
+    }
+    &__2{
+      display: flex;
+      
+    }
+    :hover{
+      background-color: lightgray;
+      color: #222;
+    }
+    a{
+      // padding: 5px 10px;
+      // margin: -5px 5px -5px -5px;
+      display: block;
+      color: #969696;
+      // text-align: center;
+      width: 300px;
+      margin: 1px 2px 5px 2px;
+    }
+
     .fa-twitter{
-      margin: 5px;
+      margin: 7px 2px 5px 20px;
+      
     }
     .fa-google{
-      margin: 5px;
+      margin: 7px 2px 5px 20px;
     }
   }
   li{
     width:100%;
     margin: 1px;
-    background: #7ba5ff;
     a{
-      color: #fff;
+      color: #969696;
       text-decoration: none;
     }
   }
@@ -44,7 +64,7 @@ ul{
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
-  color: #fff;
+  color: #969696;
 }
 
 li{
