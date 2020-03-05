@@ -68,3 +68,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'gon'
 gem 'rails-i18n'
 gem 'font-awesome-rails'
+gem 'devise'
+
+
