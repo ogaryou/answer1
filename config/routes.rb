@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/qas/index',to: 'qas#index'
   delete 'qas/destroy', to: 'qas#destroy'
   post '/qas/new',to: 'qas#create'
-  
+  get '/answers/index',to:'answers#index'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   
 end
