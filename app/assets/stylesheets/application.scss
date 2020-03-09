@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import "answers";
+@import "answers/answers";
 @import "reset";
-@import "questions";
-@import "qas";
+@import "qas/questions";
+@import "qas/qas";
 @import "font-awesome";
