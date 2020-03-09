@@ -9,7 +9,7 @@
     <% else %>
       <li><%= link_to 'ログイン', new_user_session_path %>
         <ul class="dropdwn__menu">
-          <li class="dropdwn__menu__1"><%= fa_icon("twitter" ) %><%=link_to "twitterでログインする","/users/sign_in"%></li>
+          <li class="dropdwn__menu__1"><%= fa_icon("twitter" ) %><%=link_to "twitterでログインする",user_twitter_omniauth_authorize_path%></li>
           <li class="dropdwn__menu__2"><%= fa_icon("google")%><%= link_to "g-mailでログインする","#"%></li>
         </ul>
       </li>  
