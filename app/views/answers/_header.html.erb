@@ -4,13 +4,16 @@
         <li>Stady App</li>
         <li><%= link_to "作成",new_qa_path %></li>
         <li><%= link_to "今日のタスク",qas_path%></li>
-        <li>ログイン
-            <ul class="dropdwn__menu">
-              <li class="dropdwn__menu__1"><%= fa_icon("twitter" ) %><%=link_to "twitterでログインする","/users/sign_in"%></li>
-              <li class="dropdwn__menu__2"><%= fa_icon("google")%><%= link_to "g-mailでログインする","#"%></li>
-            </ul>
-        </li>
-
+    <% if user_signed_in? %>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path %>
+        <ul class="dropdwn__menu">
+          <li class="dropdwn__menu__1"><%= fa_icon("twitter" ) %><%=link_to "twitterでログインする","/users/sign_in"%></li>
+          <li class="dropdwn__menu__2"><%= fa_icon("google")%><%= link_to "g-mailでログインする","#"%></li>
+        </ul>
+      </li>  
+    <% end %>
     </ul>
 </header>
 
