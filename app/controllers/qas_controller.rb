@@ -23,7 +23,7 @@ class QasController < ApplicationController
       @count = count.to_i
     end 
   end  
-  def new(qa_params)
+  def new
     @qa = Qa.new
   end  
 
