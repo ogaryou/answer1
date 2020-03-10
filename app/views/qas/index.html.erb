@@ -22,19 +22,12 @@
     <div class="main__bootom">
       <div class="main__bootom__botun">
         <div id="main__bootom__botun__click">
-          <%= form_with model: @qa,:url => {:qas => :index} do |f| %>
+          <%= form_with model: @sample,:url => {:qas => :index} do |f| %>
             <%= f.submit "解答を表示する",  class:"main__bootom__botun__click__function",id: "new_qa"%>
             <%= f.submit "次の問題へ", class:"main__bootom__botun__click__function__next",id: "next_qa"%>
           <% end %>
       </div>
-        <div id="main__bootom__botun__click2">
-            <% %w(完璧 できた 普通 よくわからなかった 全くわからなかった ).each.with_index do |ingredient,i| %>
-            <label>
-              <%= check_box_tag 'qas[ingredients][]', ingredient,false,id:"qas_ingredients_#{i}"%>
-              <%= ingredient %>
-            </label>
-            <% end %>
-        </div>
+
       </div>
     </div>
   </div>

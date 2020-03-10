@@ -37,7 +37,7 @@ $(function(){
     var num = gon.count + 1;
     $.ajax({
       url: '/qas/index',
-      type: 'GET',
+      type: 'POST',
       dataType: 'html',
       async: true,
       data: {

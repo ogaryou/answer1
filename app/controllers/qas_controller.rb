@@ -22,21 +22,21 @@ class QasController < ApplicationController
       @sample = sample_array
       @count = count.to_i
     end 
-
   end  
-  def new
+  def new(qa_params)
     @qa = Qa.new
   end  
 
   def create
     @qa = Qa.new(qa_params)
     if @qa.save
+      
       flash[:notice] = "作成しました"
       redirect_to action: :new
     else
       render "new"
     end  
-
+  
   end  
   def question
 
@@ -55,7 +55,7 @@ class QasController < ApplicationController
 
   private
   def qa_params
-    params.require(:qa).permit(:body, :content, :id, :name, :checkbox,ingredients:[])
+    params.require(:qa).permit(:body, :content,  :name)
   end  
 
 
