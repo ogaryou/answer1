@@ -1,8 +1,22 @@
-  <%= form_with model: @qa,:url => {:qas => :new},id: "new_qa" do |f| %>
+  
+  <%= form_with model: @qa,:url => {:qas => :new},id: "new_qa", local: true do |f| %>
     <div class="submitn">
       <%= f.submit '作成', class: "submitn__btn"%>
           <%# <button type="submit" class="submitn__btn">作成</button> %>
-    </div>
+    </div> 
+    <% if @qa.errors.any? %>
+      <div class="alert">
+        <ul>
+          <% @qa.errors.full_messages.each do |message| %>
+            <li><%= message%></li>
+            <% end %>
+        </ul>
+      </div>
+    <% end%>
+    <% if flash[:notice] %>
+      <div class="message"><%= flash[:notice] %></div>
+    <% end %>
+    
   <div class="form">
       <div class="box1">
         <span class="form-name1">問題</span>
@@ -17,5 +31,5 @@
           <%= f.text_area :content, class: 'form__aon',placeholder: "解答文", size: "40x20"%>
         </div>  
       </div>
-  </div>  
+  </div> 
   <% end %>  

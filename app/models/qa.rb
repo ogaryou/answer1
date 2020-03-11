@@ -13,5 +13,7 @@
 #
 
 class Qa < ApplicationRecord
+  validates :body, presence: true, length: { maximum: 1000 }
+  validates :content, presence: true, length: { maximum: 1000 }
   has_one :response
 end

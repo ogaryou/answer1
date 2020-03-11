@@ -37,7 +37,7 @@ $(function(){
     var num = gon.count + 1;
     $.ajax({
       url: '/qas/index',
-      type: 'GET',
+      type: 'POST',
       dataType: 'html',
       async: true,
       data: {
@@ -48,6 +48,15 @@ $(function(){
 
     $('.main__head__question').html('問題' + num + '/' + gon.sample.length);
     $('.main__head__questions__answer').html(gon.sample[gon.count].body);
+
+    if (num === gon.sample.length) {
+      $('.main__bootom__botun__click__function__next').hide();
+      $('.main__bootom__botun__click__function').hide();
+      $('.main__head__questions__answer').html('終了');
+      $('.main__head__question').html('お疲れ様でした');
+
+    
+    };
 
   })
 })
