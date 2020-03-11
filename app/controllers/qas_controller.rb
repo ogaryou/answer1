@@ -5,6 +5,7 @@ class QasController < ApplicationController
     
     if params[:count] == nil
       qas = Qa.all
+      
       @sample = qas.sample(50) 
       @count = 0
 
@@ -30,13 +31,12 @@ class QasController < ApplicationController
   def create
     @qa = Qa.new(qa_params)
     if @qa.save
-      
       flash[:notice] = "作成しました"
       redirect_to action: :new
     else
       render "new"
     end  
-  
+
   end  
   def question
 
@@ -55,7 +55,7 @@ class QasController < ApplicationController
 
   private
   def qa_params
-    params.require(:qa).permit(:body, :content,  :name)
+    params.require(:qa).permit(:body, :content,  :name).merge(user_id: current_user.id)
   end  
 
 
