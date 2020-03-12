@@ -10,10 +10,17 @@
 #  name        :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :integer
 #
 
 class Qa < ApplicationRecord
+  belongs_to :user
   validates :body, presence: true, length: { maximum: 1000 }
   validates :content, presence: true, length: { maximum: 1000 }
   has_one :response
+  
+  def user
+    return User.find_by(id: self.user_id)
+  end
+  
 end

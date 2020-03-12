@@ -1,14 +1,20 @@
 class QasController < ApplicationController
 
   def index
-    gon.qas = Qa.all
+    # @qa = current_user.qas.all
+    # qas = current_user.qas.all
     
+    gon.qas = Qa.all
+    gon.user = current_user.id
+
     if params[:count] == nil
-      qas = Qa.all
-      @sample = qas.sample(50) 
+      qas = current_user.qas.all
+      
+      @sample = qas.sample(50)
       @count = 0
 
       gon.sample = @sample
+
       gon.count = @count
     else  
       sample = params[:sample]
@@ -22,6 +28,9 @@ class QasController < ApplicationController
       @sample = sample_array
       @count = count.to_i
     end 
+    if @sample.blank?
+      redirect_to new_qa_path
+    end  
   end  
   def new
     @qa = Qa.new
@@ -30,19 +39,18 @@ class QasController < ApplicationController
   def create
     @qa = Qa.new(qa_params)
     if @qa.save
-      
       flash[:notice] = "作成しました"
       redirect_to action: :new
     else
       render "new"
     end  
-  
   end  
   def question
 
   end  
 
   def show
+    
   end  
 
   def destroy
@@ -55,7 +63,7 @@ class QasController < ApplicationController
 
   private
   def qa_params
-    params.require(:qa).permit(:body, :content,  :name)
+    params.require(:qa).permit(:body, :content,  :name).merge(user_id: current_user.id)
   end  
 
 
