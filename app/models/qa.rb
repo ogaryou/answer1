@@ -19,4 +19,8 @@ class Qa < ApplicationRecord
   validates :content, presence: true, length: { maximum: 1000 }
   has_one :response
   
+  def user
+    return User.find_by(id: self.user_id)
+  end
+  
 end

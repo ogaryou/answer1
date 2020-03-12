@@ -1,15 +1,18 @@
 class QasController < ApplicationController
 
   def index
+    @qa = current_user.qas.all
+    qas = current_user.qas.all
     gon.qas = Qa.all
-    
+    gon.user = current_user.id
     if params[:count] == nil
-      qas = Qa.all
+      qas = current_user.qas.all
       
-      @sample = qas.sample(50) 
+      @sample = qas.all
       @count = 0
 
       gon.sample = @sample
+
       gon.count = @count
     else  
       sample = params[:sample]
@@ -36,13 +39,15 @@ class QasController < ApplicationController
     else
       render "new"
     end  
-
+    
   end  
   def question
 
   end  
 
   def show
+    @qa = Qa.find_by(id: params[:id])
+    
   end  
 
   def destroy
@@ -55,7 +60,7 @@ class QasController < ApplicationController
 
   private
   def qa_params
-    params.require(:qa).permit(:body, :content,  :name).merge(user_id: current_user.id)
+    params.require(:qa).permit(:body, :content,  :name, :user_id).merge(user_id: current_user.id)
   end  
 
 
