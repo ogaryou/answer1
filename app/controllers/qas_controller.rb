@@ -19,7 +19,7 @@ class QasController < ApplicationController
     else  
       sample = params[:sample]
       count = params[:count]
-      qas = Qa.all
+      qas = current_user.qas.all
       sample_array = []
       sample.each {|key, value|
         sample_id = value[:id]
@@ -29,6 +29,7 @@ class QasController < ApplicationController
       @count = count.to_i
     end 
     if @sample.blank?
+      flash[:notice] = "問題を作成してください"
       redirect_to new_qa_path
     end  
   end  
