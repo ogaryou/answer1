@@ -51,16 +51,24 @@ class QasController < ApplicationController
   end  
 
   def show
+  
+  end  
+
+  def edit
+    @qa = Qa.find(params[:id])
     
+  end  
+
+  def update
+    qa = Qa.find(params[:id])
+    qa.update(qa_params) 
   end  
 
   def destroy
 
   end  
 
-  def update
 
-  end  
 
   private
   def qa_params
