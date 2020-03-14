@@ -5,24 +5,13 @@
       <a href="/" class="top__btn">トップページに戻る</a>
     </div>
   </header>
+  
     <%= form_with model: @qa do |f| %>
     <div class="submitn">
       <%= f.submit '編集', class: "submitn__btn"%>
           <%# <button type="submit" class="submitn__btn">作成</button> %>
     </div> 
-    <% if @qa.errors.any? %>
-      <div class="alert">
-        <ul>
-          <% @qa.errors.full_messages.each do |message| %>
-            <li><%= message%></li>
-            <% end %>
-        </ul>
-      </div>
-    <% end%>
-    <% if flash[:notice] %>
-      <div class="message"><%= flash[:notice] %></div>
-    <% end %>
-    
+
   <div class="form">
       <div class="box1">
         <span class="form-name1">問題</span>

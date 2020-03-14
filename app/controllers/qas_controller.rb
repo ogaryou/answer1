@@ -55,13 +55,18 @@ class QasController < ApplicationController
   end  
 
   def edit
+    gon.url = Qa.find(params[:id])
     @qa = Qa.find(params[:id])
     
+    
+    
+
   end  
 
   def update
     qa = Qa.find(params[:id])
     qa.update(qa_params) 
+    redirect_back(fallback_location: qa_path)
   end  
 
   def destroy

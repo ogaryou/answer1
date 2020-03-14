@@ -17,6 +17,7 @@
 $(function(){
   $('.main__head__questions__answer').html(gon.sample[gon.count].body);
   $('.main__bootom__botun__click__function').on('click', function(){
+    
 
     gon.count += 0;
     var num = gon.count + 1;
@@ -32,6 +33,8 @@ $(function(){
   })
   $('.main__bootom__botun__click__function__next').on('click', function(){
     console.log('嫌だ');
+    var target = document.getElementById("edit");
+
     // document.getElementById("question1").textContent= "問題";
     gon.count += 1;
     var num = gon.count + 1;
@@ -45,6 +48,11 @@ $(function(){
         sample: gon.sample,
       },
     });
+    var url =gon.sample[gon.count].id;
+    var qas ='/qas/';
+    var edit ='/edit';
+      target.href = qas +url +edit;
+    
 
     $('.main__head__question').html('問題' + num + '/' + gon.sample.length);
     $('.main__head__questions__answer').html(gon.sample[gon.count].body);
