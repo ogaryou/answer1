@@ -55,7 +55,6 @@ class QasController < ApplicationController
   end  
 
   def edit
-    gon.url = Qa.find(params[:id])
     @qa = Qa.find(params[:id])
     
     
