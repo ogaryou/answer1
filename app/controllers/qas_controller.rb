@@ -56,10 +56,6 @@ class QasController < ApplicationController
 
   def edit
     @qa = Qa.find(params[:id])
-    
-    
-    
-
   end  
 
   def update
@@ -69,7 +65,10 @@ class QasController < ApplicationController
   end  
 
   def destroy
+     qa = Qa.find(params[:id])
+     qa.delete
 
+     redirect_to qas_path
   end  
 
 
