@@ -5,18 +5,25 @@
       <div class="main__link__tag">
         <ul>
           <li>
-            <a href="/qas/new" class="main__link__tag__name">新規作成</a>
-            <a href="/" class="main__link__tag__name">ホーム画面</a>
+            <%= link_to '新規作成', qas_new_path,class:"main__link__tag__name"%>
+            <%= link_to 'ホーム画面',root_path, class:"main__link__tag__name"%>
+            <%= link_to '編集',edit_qa_path(@sample),class:"main__link__tag__name",id:"edit" %>
+            <%= link_to '削除',qa_path( @sample), class:"main__link__tag__name",method: :delete %>
           <li>
         </ul>
       </div>
     </div>
     <div class="main__head">
       <div class="main__head__question" >
-        <div id="question1">問題</div>
+        <div id="question1">問題
+        </div>
       </div>
       <div class="main__head__questions">
-        <div class="main__head__questions__answer"></div>
+
+        <div class="main__head__questions__answer">
+          
+        </div>
+      </div>
       
     </div>
     <div class="main__bootom">

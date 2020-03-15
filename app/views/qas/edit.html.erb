@@ -1,0 +1,33 @@
+<div class="main-contents">
+  <header id="create">
+    <h1>問題編集</h1>
+    <div class="top">
+     <%= link_to '問題に戻る','/qas', class:"main__link__tag__name"%>
+      
+    </div>
+  </header>
+  
+    <%= form_with model: @qa do |f| %>
+    <div class="submitn">
+      <%= f.submit '編集', class: "submitn__btn"%>
+          <%# <button type="submit" class="submitn__btn">作成</button> %>
+    </div> 
+
+  <div class="form">
+      <div class="box1">
+        <span class="form-name1">問題</span>
+        <div class="form-question">
+          <%= f.text_area :body, class: 'form__control',placeholder: "問題文", size: "40x20" %>
+        </div>
+      </div> 
+      <div class="box2">
+        <span class="form-name2">解答</span>
+
+        <div class="form-answer">
+          <%= f.text_area :content, class: 'form__aon',placeholder: "解答文", size: "40x20"%>
+        </div>  
+      </div>
+  </div> 
+  <% end %>  
+ 
+</div>

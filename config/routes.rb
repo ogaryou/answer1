@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'qas/index', to: 'qas#index'
   post 'qas/index', to: 'qas#index'
   patch "/qas" , to:'qas#index'
+  patch "/qas/:id/edit", to:'qas#edit'
+  patch "/qas/:id", to:'qas#update'
   delete 'qas/destroy', to: 'qas#destroy'
   post '/qas/new',to: 'qas#create'
   root 'answers#index'

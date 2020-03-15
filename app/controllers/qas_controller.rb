@@ -19,7 +19,7 @@ class QasController < ApplicationController
     else  
       sample = params[:sample]
       count = params[:count]
-      qas = Qa.all
+      qas = current_user.qas.all
       sample_array = []
       sample.each {|key, value|
         sample_id = value[:id]
@@ -29,6 +29,7 @@ class QasController < ApplicationController
       @count = count.to_i
     end 
     if @sample.blank?
+      flash[:notice] = "問題を作成してください"
       redirect_to new_qa_path
     end  
   end  
@@ -50,16 +51,27 @@ class QasController < ApplicationController
   end  
 
   def show
-    
+  
   end  
 
-  def destroy
-
+  def edit
+    @qa = Qa.find(params[:id])
   end  
 
   def update
-
+    qa = Qa.find(params[:id])
+    qa.update(qa_params) 
+    redirect_back(fallback_location: qa_path)
   end  
+
+  def destroy
+     qa = Qa.find(params[:id])
+     qa.delete
+
+     redirect_to qas_path
+  end  
+
+
 
   private
   def qa_params
