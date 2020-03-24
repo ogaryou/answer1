@@ -52,9 +52,10 @@ production:
   database: app_production
   username: app
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
 
   rds:
     host: database-2.c19ngrcigeml.ap-northeast-1.rds.amazonaws.com
-    database: database-2
+    database: app_production
     username: postgres
     password: Jyu2148Ryo
