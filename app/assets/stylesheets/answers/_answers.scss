@@ -150,12 +150,18 @@ li{
       clear:  both; 
       float: right;
       margin-right: 209px;
+      
     }
     
   }
   &__image{
     clear: both;
     margin-bottom: 70px;
+    margin-left: 30px;
+    img{
+      width: 700px;
+      height: 500px;
+    }
   }
 }
 footer{
