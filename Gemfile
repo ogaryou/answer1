@@ -44,6 +44,7 @@ group :development, :test do
 
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.8'
+  gem 'rails-controller-testing'
 end
 
 group :development do
