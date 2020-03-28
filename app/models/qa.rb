@@ -22,5 +22,12 @@ class Qa < ApplicationRecord
   def user
     return User.find_by(id: self.user_id)
   end
-  
+
+  def create
+    qa = Qa.new(
+      body: "1000-1000=?",
+      content: "0",
+      user_id: "1"
+    )
+  end  
 end
