@@ -32,6 +32,8 @@ class User < ApplicationRecord
             user.provider = auth["provider"]
             user.uid = auth["uid"]
             user.username = auth["info"]["nickname"]
+            user.password = Devise.friendly_token[0,20]
+            user.email = User.dumy_email(auth)
           end
         end
       
@@ -50,5 +52,9 @@ class User < ApplicationRecord
       
         def email_required?
           super && provider.blank?
+        end
+        private
+        def self.dumy_email(auth)
+          "#{auth.uid}-#{auth.provider}@example.com"
         end
 end
