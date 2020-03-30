@@ -46,10 +46,7 @@ class QasController < ApplicationController
       render "new"
     end  
   end  
-  def question
-
-  end  
-
+  
   def show
   
   end  

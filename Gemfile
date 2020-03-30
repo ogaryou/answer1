@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rails-flog', require: 'flog'
 
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'rails-controller-testing'
 end
 
 group :development do
