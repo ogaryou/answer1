@@ -154,14 +154,20 @@ li{
     }
     
   }
+  @media only screen and (max-device-width : 600px) {
+    /* スマートフォンだけ以下を適用 */
+    
+    img {                  width:100%;
+                      height:500px;
+            }
+      }
   &__image{
     clear: both;
     margin-bottom: 70px;
     margin-left:30px;
-    .img{
-      width: 700px;
-      height: 500px;
-    }
+    
+ 
+    
   }
 }
 footer{
